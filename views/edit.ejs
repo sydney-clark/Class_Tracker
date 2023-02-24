@@ -7,6 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Edit Page</h1>
+    <div class="edit-container">
+    
+        <h1>Users Edit Page </h1>
+        <form action="/trackers/<%=trackers.id %>?_method=PUT" method="POST">
+        
+            Name: <input type="text" name="name" value="<%=trackers.name%>"/><br/>
+            Git Repo: <input type="text" name="" value="<%=trackers.git_repo%>"/><br/>
+            Interesting fact: <input type="text" name="color" value="<%=trackers.interesting_fact%>"/><br/>
+            Favorite Animal: <input type="text" name="color" value="<%=trackers.color%>"/><br/>
+
+            <input type="submit" name="" value="Submit Changes"/>
+        </form>
+        <a href="/trackers">Go Back to Index</a>
+    </div>
 </body>
 </html>
