@@ -2,14 +2,15 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
-// const Pokemon = require(`./models/tracker.js`); 
-// const pokemonSchema = require('./models/trackerSchema');
+const trackerController = require('./controllers/classTracker.js');
+// const tracker = require('./models/trackerSchema');
+
 
 app.use(express.urlencoded({extended:true}))
 app.use(methodOverride('_method')); 
 // app.use("/public", express.static(__dirname + "/public")); 
 // require('dotenv').config()
-
+app.use('/class_tracker', trackerController);
 // ========================
 // Seed Route
 // ========================
