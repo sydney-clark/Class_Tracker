@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const trackerController = require('./controllers/classTracker.js');
-// const tracker = require('./models/trackerSchema');
+const tracker = require('./models/trackerSchema');
 
 
 app.use(express.urlencoded({extended:true}))
@@ -11,16 +11,6 @@ app.use(methodOverride('_method'));
 // app.use("/public", express.static(__dirname + "/public")); 
 // require('dotenv').config()
 app.use('/class_tracker', trackerController);
-// ========================
-// Seed Route
-// ========================
-
-// app.get('/pokedex/seed', (req, res) => {
-// 	pokemonSchema.create(Pokemon, (error, seedData) => { //use this line for every route, need scheme and pokemonjs file
-// 		console.log('seed data', seedData)
-//         // res.send(seedData);
-// 	});
-// });
 
 // =======================
 // Listener
