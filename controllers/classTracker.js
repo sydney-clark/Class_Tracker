@@ -21,5 +21,14 @@ router.get('/index', (req, res) => {
     // )
 })
 
+// =======================
+// New linking new.ejs page to make a new pokemon
+// =======================
+
+router.get('/new', (req, res) => {
+    res.send('testing new')
+    // res.render('new.ejs');
+});
+
 module.exports = router;
 
