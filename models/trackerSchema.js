@@ -8,6 +8,6 @@ const trackerSchema = new mongoose.Schema({
 	Img: String
 });
 
-const classTracker = mongoose.model('class_tracker', trackerSchema);
+const Tracker = mongoose.model('Tracker', trackerSchema);
 
-module.exports = classTracker;
+module.exports = Tracker;

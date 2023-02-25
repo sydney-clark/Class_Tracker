@@ -6,17 +6,9 @@
     <div class="edit-container">
     
         <h1>Users Edit Page </h1>
-        <ul>
-            <form action="/tracker/<%=trackers.id %>?_method=PUT" method="POST">
-                Name: <input type="text" name="name" value="<%=tracker.name%>"/><br/>
-                Git Repo: <input type="text" name="" value="<%=tracker.git_repo%>"/><br/>
-                Interesting fact: <input type="text" name="" value="<%=tracker.interesting_fact%>"/><br/>
-                Favorite Animal: <input type="text" name="" value="<%=tracker.favAnimal%>"/><br/>
-                <input type="submit" name="" value="Submit Changes"/>
-            </form>
-        </ul>
+
         <a href="/tracker">Go Back to Index</a>
     </div>
-    <%- include(./partials/footer.ejs) %>
+    <%- include('./partials/footer.ejs') %>
 </body>
 </html>
