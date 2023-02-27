@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');
+
+:root{
+    --dark: gray;
+    --light: white;
+    --border: black;
+    --border-btn: white;
+}
+
+.indexPage {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+#anchor {
+    text-decoration: none;
+    font-family: 'Gloock', serif;
+}
+
+.container {
+    max-width: 1024px;
+    margin: auto;
+}
+
+.mainSite {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.d-flex {
+    display: flex;
+}
