@@ -3,6 +3,8 @@ const router = express.Router();
 const seedData = require('../models/tracker.js');
 const Tracker = require('../models/trackerSchema');
 
+
+
 //routes now go in here and say router.get instead of app.get
 
 // ========================
@@ -57,20 +59,23 @@ router.get('/new', (req, res) => {
 // =======================
 // Edit
 // =======================
-
-router.get('/:id/edit', (req, res)=>{
-    Tracker.findById(req.params.id, (err, foundTracker)=>{ //find the fruit
-        if (err) {
-            console.log('err', err)
-        }
-        res.render(
-    		'edit.ejs', //reroutes to edit.ejs file
-    		{
-    			tracker: foundTracker //pass in found fruit
-    		}
-    	);
-    });
-});
+router.get('/edit', (req, res)=>{
+    // 
+    res.render("edit")
+  })
+// router.get('/:id/edit', (req, res)=>{
+//     Tracker.findById(req.params.id, (err, foundTracker)=>{ //find the fruit
+//         if (err) {
+//             console.log('err', err)
+//         }
+//         res.render(
+//     		'edit.ejs', //reroutes to edit.ejs file
+//     		{
+//     			tracker: foundTracker //pass in found fruit
+//     		}
+//     	);
+//     });
+// });
 
 
 
