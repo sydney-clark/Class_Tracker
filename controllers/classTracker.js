@@ -41,9 +41,9 @@ router.get('/edit', (req, res)=>{
 });
 
 
-// router.put('/trackerSchema/:id', (req, res)=>{
+// router.put('/tracker/:id', (req, res)=>{
 //     Tracker.findByIdAndUpdate(req.params.id, req.body,(err, updatedTracker)=>{
-//       res.redirect('/index');
+//       res.redirect('/tracker');
 //   })
 //   })
 

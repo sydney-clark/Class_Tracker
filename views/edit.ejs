@@ -1,20 +1,38 @@
 
 
 <%- include('./partials/head.ejs') %>
-<body>
+<body style="background-image: linear-gradient(to left, #ebf5e5, #8f9188 );">
    
+    <div class="container mt-5">
+        <div class="text-center">
+            <h1 class="display-5 mb-5"><stong>Students Edit Page</stong></h1>
+        </div>
+        <div class="main row justify-content-center">
+            <form action="/class_tracker/<%=tracker.id%>?_method=PUT" method="POST">
+                <div class="col-8 mb-4">
+                    <lable for="Name">Name</lable>
+                    <input class="form-control" id="firstName" type="text" placeholder="Enter Name">
+                </div>
+                <div class="col-8 mb-3">
+                    <lable for="Github">Github Repo</lable>
+                    <input class="form-control" id="firstName" type="text" placeholder="Enter Github Repo ">
+                </div>
+                <div class="col-8 mb-3">
+                    <lable for="Fact">Interesting Fact</lable>
+                    <input class="form-control" id="firstName" type="text" placeholder="Enter Interesting Fact ">
+                </div>
+                <div class="col-8 mb-3">
+                    <lable for="Animal">Favorite Animal</lable>
+                    <input class="form-control" id="firstName" type="text" placeholder="Enter Favorite Animal ">
+                </div>
+                <div class="col-8">
+                    <input class="btn btn-success add-btn" type="submit" value="Submit"></input>
+                </div>
+            </form>
+            <a href="/class_tracker/index">Go Back to Index</a>
+          
+        </div>
 
-    <div class="show-container">
-        <h1>Users Edit Page</h1>
-        <form>
-       
-            <input type="text" name="Name" placeholder="Name"/><br/> <br/> 
-           <input type="text" name="Github" placeholder="GitHub"/><br/><br/> 
-            
-         </form>
-        <nav>
-            <a href="/class_tracker/index">Go to Index page</a>
-        </nav>
     </div>
     <%- include('./partials/footer.ejs') %>
 </body>
