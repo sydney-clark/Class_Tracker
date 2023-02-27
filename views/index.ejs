@@ -1,15 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index Page</title>
-</head>
-<body>
-    <h1>Index Page</h1>
-    <% for (let i=0; i < trackers.length; i++){ %>
-        <a href="/class_tracker/<%= trackers[i]._id %>/edit"><%= trackers[i]._id %></a>
-        <% } %>
-</body>
+<html lang="en" dir="ltr">
+    <head>
+        <%- include('./partials/head.ejs')  %>
+    </head>
+    <body>
+        <div class="navBar">
+            <h1>Class Tracker</h1>
+                <nav class="newStudent">
+                    <button><a href="/class-tracker/new">Add a new student</a></button>
+                </nav>
+        </div>
+        <ul class="homePage">
+            <% trackers.forEach(pokemon=> { %>
+                <li>
+                    <a href="/class_tracker/<%= trackers._id %>">
+                        <h1>Name: <%= trackers.Name %></h1>
+                    </a>
+                    <h3>Interesting Fact: <%= trackers.Fact%></h3>
+                    <button><a href="/class_tracker/<%=trackers._id %>/edit">Edit</a></button>
+                    <form action="/class_tracker/<%= trackers._id %>?_method=DELETE" method="POST">
+                        <input type="submit" class="button" value="DELETE"/>
+                    </form>
+                </li>
+            <% }) %>
+        </ul>
+    </body>
 </html>
