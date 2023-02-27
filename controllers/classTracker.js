@@ -23,22 +23,22 @@ router.get('/seed', (req, res) => {
 // =======================
 // Edit
 // =======================
+// router.get('/edit', (req, res)=>{
+//     // 
+//     res.render("edit")
+//   })
+
+
 router.get('/edit', (req, res)=>{
-    // 
-    res.render("edit")
-  })
-
-
-// router.get('/tracker/:_id/edit', (req, res)=>{
-//     Tracker.findById(req.params.id, (err, foundTracker)=>{ //find the fruit      
-//         res.render(
-//     		'edit.ejs', //reroutes to edit.ejs file
-//     		{
-//     			tracker: foundTracker //pass in found fruit
-//     		}
-//     	);
-//     });
-// });
+    Tracker.findById(req.params.id, (err, foundTracker)=>{ //find the fruit      
+        res.render(
+    		'edit.ejs', //reroutes to edit.ejs file
+    		{
+    			tracker: foundTracker //pass in found fruit
+    		}
+    	);
+    });
+});
 
 
 // router.put('/trackerSchema/:id', (req, res)=>{
