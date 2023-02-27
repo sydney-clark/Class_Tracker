@@ -5,17 +5,17 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body class="indexPage">
-        <h1>Class Tracker</h1>
+        <h1 class="header">Class Tracker</h1>
         <div>
             <main id="mainSite">
                 <div class="container">
-                    <div class="box-nav d-flex-justify-between">
-                    <a href="/class-tracker/new" class="border-shadow" id="anchor">
+                    <div class="box-nav d-flex justify-between">
+                    <a href="/class_tracker/new" class="border-shadow" id="anchor">
                         <span class="text-gradient">Add a new student<i class="fas fa-user"></i></span>
                     </a>
                 </div>
                 <% trackers.forEach(trackers=> { %>
-                <form action="/" method="POST">
+                <form action="/" method="POST" class="forms">
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
@@ -32,8 +32,8 @@
                                 </a>
                             </td>
                                 <td><%= trackers.Fact%></td>
-                                <td>
-                                    <a href="/class_tracker/edit<%=trackers._id %>" class="btn borderder-shadow update">
+                                <td class="actions">
+                                    <a href="/class_tracker/edit<%= trackers._id %>" class="btn borderder-shadow update">
                                         <span class="text-gradient"><i class="fa-solid fa-user-pen"></i></span>
                                     </a>
                                     <a href="/class_tracker/<%=trackers._id %>" class="btn borderder-shadow update">
@@ -45,6 +45,7 @@
                     </table>
                 </form>
                 <% }) %>
+            </div>
         </div>
     </main>
     </body>

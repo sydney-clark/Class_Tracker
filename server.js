@@ -7,7 +7,7 @@ const trackerController = require('./controllers/classTracker');
 app.use(express.urlencoded({extended:true}))
 app.use(methodOverride('_method')); 
 app.set("view engine", "ejs");
-// app.use("/public", express.static(__dirname + "/public")); 
+app.use("/public", express.static(__dirname + "/public")); 
 // require('dotenv').config()
 app.use('/class_tracker', trackerController);
 
