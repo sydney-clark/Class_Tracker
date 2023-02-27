@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const seedData = require('../models/tracker.js');
-const Tracker = require('../models/trackerSchema');
+const Tracker = require('../models/trackerSchema')
 // const methodOverride = require('method-override');
 
 // router.use(methodOverride('_method'));
@@ -13,7 +13,11 @@ const Tracker = require('../models/trackerSchema');
 // ========================
 
 router.get('/seed', (req, res) => {
-	Tracker.create(seedData, (error, data) => {
+    // console.log(seedData)
+	Tracker.create(seedData, (err, data) => {
+        if(err) {
+            console.log(err)
+        }
 		console.log('seed data', data)
         res.send(data);
 	});
@@ -29,7 +33,7 @@ router.get('/seed', (req, res) => {
 //   })
 
 
-router.get('/edit', (req, res)=>{
+router.get('/edit/:id', (req, res)=>{
     Tracker.findById(req.params.id, (err, foundTracker)=>{ //find the fruit      
         res.render(
     		'edit.ejs', //reroutes to edit.ejs file
@@ -41,19 +45,22 @@ router.get('/edit', (req, res)=>{
 });
 
 
-// router.put('/tracker/:id', (req, res)=>{
-//     Tracker.findByIdAndUpdate(req.params.id, req.body,(err, updatedTracker)=>{
-//       res.redirect('/tracker');
-//   })
-//   })
+router.put('/tracker/:id', (req, res)=>{
+    Tracker.findByIdAndUpdate(req.params.id, req.body,(err, updatedTracker)=>{
+      res.redirect('/tracker');
+  })
+  })
 
 
 
 // ========================
 // Show
 // ========================
-router.get("/show:id", (req, res) => {
-    Tracker.findById(req.params._id, (error, tracker)=>{
+router.get("/show/:id", (req, res) => {
+    Tracker.findById(req.params.id, (error, foundTracker)=>{
+        if(error){
+            console.log(error)
+        }
         res.render("show.ejs", {
             tracker: foundTracker
             
