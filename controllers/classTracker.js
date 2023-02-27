@@ -52,8 +52,8 @@ router.get('/edit', (req, res)=>{
 // ========================
 // Show
 // ========================
-router.get("/show/:id", (req, res) => {
-    Tracker.findById(req.params.id, (error, foundTracker)=>{
+router.get("/show:id", (req, res) => {
+    Tracker.findById(req.params._id, (error, tracker)=>{
         res.render("show.ejs", {
             tracker: foundTracker
             
