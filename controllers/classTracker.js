@@ -52,14 +52,13 @@ router.get('/edit', (req, res)=>{
 // ========================
 // Show
 // ========================
-router.get("/:_id", (req, res) => {
-    Tracker.findById(req.params._id, (error, tracker)=>{
+router.get("/show/:id", (req, res) => {
+    Tracker.findById(req.params.id, (error, foundTracker)=>{
         res.render("show.ejs", {
-            tracker: tracker
+            tracker: foundTracker
             
-    })
-  
-  });
+    });
+});
 });
 
 
