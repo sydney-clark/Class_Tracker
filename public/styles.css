@@ -108,11 +108,15 @@
 }
 
 .table tr:hover {
-    background-color: gray;
+    background-color: rgb(65, 208, 149);
 }
 
 .table tr:hover .actions {
     box-shadow: none;
 }
 
-.table .thead-dark 
+.table .thead-dark th{
+    color: white;
+    background-color: var(--dark);
+    border-color: gray;
+}
