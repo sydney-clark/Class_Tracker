@@ -2,27 +2,50 @@
 <html lang="en" dir="ltr">
     <head>
         <%- include('./partials/head.ejs')  %>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
-        <div class="navBar">
-            <h1>Class Tracker</h1>
-                <nav class="newStudent">
-                    <button><a href="/class-tracker/new">Add a new student</a></button>
-                </nav>
-        </div>
-        <ul class="homePage">
-            <% trackers.forEach(pokemon=> { %>
-                <li>
-                    <a href="/class_tracker/<%= trackers._id %>">
-                        <h1>Name: <%= trackers.Name %></h1>
+        <h1>Class Tracker</h1>
+        <div>
+            <main id="mainSite">
+                <div class="container">
+                    <div class="box-nav d-flex-justify-between">
+                    <a href="/class-tracker/new" class="border-shadow">
+                        <span class="text-gradient">Add a new student<i class="fas fa-user"></i></span>
                     </a>
-                    <h3>Interesting Fact: <%= trackers.Fact%></h3>
-                    <button><a href="/class_tracker/<%=trackers._id %>/edit">Edit</a></button>
-                    <form action="/class_tracker/<%= trackers._id %>?_method=DELETE" method="POST">
-                        <input type="submit" class="button" value="DELETE"/>
-                    </form>
-                </li>
-            <% }) %>
-        </ul>
+                </div>
+                <% trackers.forEach(trackers=> { %>
+                <form action="/" method="POST">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Name</th>
+                                <th>Interesting Fact</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <a href="/class_tracker/show<%= trackers._id %>">
+                                    <h1><%= trackers.Name %></h1>
+                                </a>
+                            </td>
+                                <td><%= trackers.Fact%></td>
+                                <td>
+                                    <a href="/class_tracker/edit<%=trackers._id %>" class="btn borderder-shadow update">
+                                        <span class="text-gradient"><i class="fa-solid fa-user-pen"></i></span>
+                                    </a>
+                                    <a href="/class_tracker/<%=trackers._id %>" class="btn borderder-shadow update">
+                                        <span class="text-gradient"><i class="fa-solid fa-trash"></i></span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+                <% }) %>
+        </div>
+    </main>
     </body>
 </html>
