@@ -1,12 +1,20 @@
 
-    <%- include('./partials/head.ejs') %>
-<body>
-  
-    <div class="edit-container">
-    
-        <h1>Users Edit Page </h1>
 
-        <a href="/tracker">Go Back to Index</a>
+<%- include('./partials/head.ejs') %>
+<body>
+   
+
+    <div class="show-container">
+        <h1>Users Edit Page</h1>
+        <form>
+       
+            <input type="text" name="Name" placeholder="Name"/><br/> <br/> 
+           <input type="text" name="Github" placeholder="GitHub"/><br/><br/> 
+            
+         </form>
+        <nav>
+            <a href="/class_tracker/index">Go to Index page</a>
+        </nav>
     </div>
     <%- include('./partials/footer.ejs') %>
 </body>

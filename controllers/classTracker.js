@@ -2,8 +2,9 @@ const express = require('express');
 const router = express.Router();
 const seedData = require('../models/tracker.js');
 const Tracker = require('../models/trackerSchema');
+// const methodOverride = require('method-override');
 
-
+// router.use(methodOverride('_method'));
 
 //routes now go in here and say router.get instead of app.get
 
@@ -17,6 +18,50 @@ router.get('/seed', (req, res) => {
         res.send(data);
 	});
 });
+
+
+// =======================
+// Edit
+// =======================
+router.get('/edit', (req, res)=>{
+    // 
+    res.render("edit")
+  })
+
+
+// router.get('/tracker/:_id/edit', (req, res)=>{
+//     Tracker.findById(req.params.id, (err, foundTracker)=>{ //find the fruit      
+//         res.render(
+//     		'edit.ejs', //reroutes to edit.ejs file
+//     		{
+//     			tracker: foundTracker //pass in found fruit
+//     		}
+//     	);
+//     });
+// });
+
+
+// router.put('/trackerSchema/:id', (req, res)=>{
+//     Tracker.findByIdAndUpdate(req.params.id, req.body,(err, updatedTracker)=>{
+//       res.redirect('/index');
+//   })
+//   })
+
+
+
+// ========================
+// Show
+// ========================
+router.get("/:_id", (req, res) => {
+    Tracker.findById(req.params._id, (error, tracker)=>{
+        res.render("show.ejs", {
+            tracker: tracker
+            
+    })
+  
+  });
+});
+
 
 // ========================
 // Index
@@ -55,36 +100,6 @@ router.get('/new', (req, res) => {
     // })
     //  res.send(req.body);
 // })
-
-// =======================
-// Edit
-// =======================
-router.get('/edit', (req, res)=>{
-    // 
-    res.render("edit")
-  })
-// router.get('/:id/edit', (req, res)=>{
-//     Tracker.findById(req.params.id, (err, foundTracker)=>{ //find the fruit
-//         if (err) {
-//             console.log('err', err)
-//         }
-//         res.render(
-//     		'edit.ejs', //reroutes to edit.ejs file
-//     		{
-//     			tracker: foundTracker //pass in found fruit
-//     		}
-//     	);
-//     });
-// });
-
-
-
-
-// router.put('/:id', (req, res)=>{
-//     trackerSchema.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedTracker)=>{
-//     res.redirect('/');
-//     });
-// });
 
 
 module.exports = router;
