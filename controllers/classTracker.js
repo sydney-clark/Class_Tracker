@@ -2,12 +2,17 @@ const express = require('express');
 const router = express.Router();
 const seedData = require('../models/tracker.js');
 const Tracker = require('../models/trackerSchema')
-// const methodOverride = require('method-override');
+const methodOverride = require('method-override');
 
-// router.use(methodOverride('_method'));
+router.use(methodOverride('_method'));
 
 //routes now go in here and say router.get instead of app.get
 
+router.delete('tracker/:id', (req, res)=> {
+    Pokemon.findByIdAndRemove(req.params.id, (err, data)=>{
+      res.redirect('/tracker')
+    })
+  })
 // ========================
 // Seed Route
 // ========================
@@ -33,6 +38,14 @@ router.get('/seed', (req, res) => {
 //   })
 
 
+
+router.put('/tracker/:id', (req, res)=>{
+    Tracker.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedTracker)=>{
+      res.redirect('/show');
+  })
+  })
+
+
 router.get('/edit/:id', (req, res)=>{
     Tracker.findById(req.params.id, (err, foundTracker)=>{ //find the fruit      
         res.render(
@@ -45,11 +58,7 @@ router.get('/edit/:id', (req, res)=>{
 });
 
 
-router.put('/tracker/:id', (req, res)=>{
-    Tracker.findByIdAndUpdate(req.params.id, req.body,(err, updatedTracker)=>{
-      res.redirect('/tracker');
-  })
-  })
+
 
 
 

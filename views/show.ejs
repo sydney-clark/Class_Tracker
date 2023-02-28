@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('./partials/head.ejs') %>
-  <body style="background-image: linear-gradient(to left, #ebf5e5, #8f9188)">
+<body class="new-page-container">
     <div class="container mt-10">
       <div class="text-center">
         <h1 class="display-5 mb-5"><stong>Students show Page</stong></h1>
       </div>
       <h1><%=tracker.Name %></h1>
-      <div class="d-flex">
+      <div class="show-list">
         <ul class="list-inline">
-          <li class="col-8 mb-3">Github Repo: <%=tracker.Github%></li>
-          <li class="col-8 mb-3">Favorite Animal: <%=tracker.Animal%></li>
-          <li class="col-8 mb-3"></li>
-          <img src="<%=tracker.Img %>"/>
+          <li class="info">Github Repo: <%=tracker.Github%></li>
+          <li class="info">Favorite Animal: <%=tracker.Animal%></li>
         </ul>
+        <img src="<%=tracker.Img %>"/>
       </div>
      
-      <a href="/class_tracker/index">Go Back to Index</a>
     </div>
-    <%- include('./partials/footer.ejs') %>
+    <div class="link">
+        <a href="/class_tracker/index">Go Back to Index</a>
+    </div>
+    
   </body>
 </html>
