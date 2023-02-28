@@ -9,7 +9,7 @@
             <nav>
                 <div class="container">
                     <div class ="text-center">
-                        <h1>Class Tracker</h1>
+                        <h1 class="header">Class Tracker</h1>
                     </div>
                     </div>
                     </nav>
@@ -18,13 +18,18 @@
 
 <!-- main site -->
             <main id="site-main">
+                <div class="container">
                     <div class="box-nav d-flex justify-between">
+                        <!-- id="anchor" add below at end -->
                     <a href="/class_tracker/new" class="border-shadow" id="anchor">
-                        <span class="text-gradient">Add a new student<i class="fas fa-user"></i></span>
+                        <span class="text-gradient">Add a new student <i class="fas fa-user"></i></span>
                     </a>
                 </div>
-                <% trackers.forEach(trackers=> { %>
-                <form action="/" method="POST" class="forms">
+
+                <!-- form handling -->
+                
+                    <!-- put below at end class="forms" -->
+                <form action="/" method="POST">
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
@@ -34,26 +39,27 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <% trackers.forEach(trackers=> { %>
                             <tr>
                                 <td>
-                                    <a href="/class_tracker/show/<%= trackers._id %>">
+                                    <a href="/class_tracker/show/<%= trackers._id %>" class="studentName">
                                     <h1><%= trackers.Name %></h1>
-                                </a>
-                            </td>
+                                    </a>
+                                </td>
                                 <td><%= trackers.Fact%></td>
                                 <td class="actions">
-                                    <a href="/class_tracker/edit/<%= trackers._id %>" class="btn borderder-shadow update">
-                                        <span class="text-gradient"><i class="fa-solid fa-user-pen"></i></span>
+                                    <a href="/class_tracker/edit/<%= trackers._id %>" class="btn border-shadow update">
+                                    <span class="text-gradient"><i class="fa-solid fa-user-pen"></i></span>
                                     </a>
                                     <a href="/class_tracker/<%=trackers._id %>" class="btn borderder-shadow update">
-                                        <span class="text-gradient"><i class="fa-solid fa-trash"></i></span>
+                                    <span class="text-gradient"><i class="fa-solid fa-trash"></i></span>
                                     </a>
                                 </td>
                             </tr>
+                            <% }) %>
                         </tbody>
                     </table>
                 </form>
-                <% }) %>
             </div>
         </div>
     </main>

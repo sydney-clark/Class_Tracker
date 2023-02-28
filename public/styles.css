@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');
 
 :root{
-    --dark: gray;
-    --light: white;
-    --border: black;
-    --border-btn: white;
+    --dark: black;
+    --light: #adb5bd;
+    --border: #09090a;
+    --border-btn: #edf2f4;
 }
 
 .indexPage {
+    background-image: url('https://i.imgur.com/TgFfb6G.jpg');
+    background-image: fixed 100% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
@@ -19,15 +23,16 @@
 }
 
 .container {
-    max-width: 1024px;
+    max-width: 1100px;
     margin: auto;
+    text-align: center;
 }
 
 .nav-brand {
     font-size: 1.5em;
     font-weight: bold;
 }
-#mainSite {
+#site-main {
     font-size: 1.5em;
     font-weight: bold;
 }
@@ -47,7 +52,7 @@
 
 .border-shadow {
     border: 1px solid var(--border-btn);
-    box-shadow: 1px 3px 10px #e9ecef;
+    box-shadow: 1px 3px 10px #f5f6f8;
 }
 
 .text-dark {
@@ -63,14 +68,15 @@
 }
 
 .text-gradient {
-    background: linear-gradient(to right, #8e2de2, #8e2de2);
+    background: linear-gradient(to right, #eaf607, #e34b05);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .header {
-    background-color: red;
+    font-size: 80px;
+    color: rgb(7, 202, 241);
     padding: 1em 0;
     width: 100%;
 }
@@ -83,6 +89,14 @@
 #site-main .container .box-nav #anchor {
     font-size: 1em;
     padding: .5em 1em;
+    margin-top: -90px;
+    margin-bottom: 25px;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.studentName {
+    color: white;
 }
 
 #site-main .container .forms {
@@ -92,12 +106,15 @@
 .table {
     border-spacing: 0px;
     width: 100%;
+    color: white;
+    /* margin-right: auto;
+    margin-left: auto; */
 }
 
 .table td .table th {
     padding: 75em;
-    vertical-align: top;
     text-align: center;
+    vertical-align: middle;
     border-top: 1px solid var(--border);
 }
 
@@ -108,7 +125,7 @@
 }
 
 .table tr:hover {
-    background-color: rgb(65, 208, 149);
+    background-image: linear-gradient(to right, #380036, #b538df, #0e6edc);
 }
 
 .table tr:hover .actions {
@@ -118,5 +135,5 @@
 .table .thead-dark th{
     color: white;
     background-color: var(--dark);
-    border-color: gray;
+    border-color: rgb(5, 5, 5);
 }
