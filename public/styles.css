@@ -168,6 +168,7 @@
   background-image: linear-gradient(to right, #380036, #b538df, #0e6edc);
   font-size: 25px;
   margin-top: 70px;
+  margin-left: -130px;
 }
 
 .buttonText {
@@ -178,14 +179,28 @@
 
 
 /* start edit page css */
-#editPage {
-    background-image: url("https://i.imgur.com/NxGJFxD.jpg");
+#editTitle{
+  font-size: 80px;
+}
+.editPage {
+    background-image: url("https://i.imgur.com/sYfralh.jpg");
     background-image: fixed 100% 100%;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     background-size: cover;
     padding: 0px;
     margin: 0px;
   }
+
+.boxes {
+  text-align: center;
+}
+
+.mainRow {
+  display: inline-block;
+  width: 400px;
+  text-align: center;
+  margin-left: 150px;
+}
 
 .link-edit {
   padding-top: 40px;
@@ -193,6 +208,13 @@
 }
 .link-edit a {
   text-decoration: none;
+}
+
+.backButton {
+  background: linear-gradient(to right, #eaf607, #e34b05);
+  font-size: 20px;
+  margin-top: 70px;
+  margin-left: 20px;
 }
 /* end edit page css */
 
