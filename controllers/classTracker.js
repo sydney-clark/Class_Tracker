@@ -2,15 +2,15 @@ const express = require('express');
 const router = express.Router();
 const seedData = require('../models/tracker.js');
 const Tracker = require('../models/trackerSchema')
-const methodOverride = require('method-override');
+//const methodOverride = require('method-override');
 
-router.use(methodOverride('_method'));
+
 
 //routes now go in here and say router.get instead of app.get
 
-router.delete('tracker/:id', (req, res)=> {
+router.delete('/tracker/:id', (req, res)=> {
     Tracker.findByIdAndRemove(req.params.id, (err, data)=>{
-      res.redirect('/tracker')
+      res.redirect('/class_tracker/index')
     })
   })
 // ========================
@@ -36,16 +36,7 @@ router.delete('tracker/:id', (req, res)=> {
 //     // 
 //     res.render("edit")
 //   })
-
-
-
-router.put('/tracker/:id', (req, res)=>{
-    Tracker.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedTracker)=>{
-      res.redirect('/show');
-  })
-  })
-
-
+// router.get('/edit/:id', (req, res)=>{
 router.get('/edit/:id', (req, res)=>{
     Tracker.findById(req.params.id, (err, foundTracker)=>{ //find the fruit      
         res.render(
@@ -56,6 +47,19 @@ router.get('/edit/:id', (req, res)=>{
     	);
     });
 });
+
+
+router.put('/tracker/:id', (req, res)=>{
+    Tracker.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedTracker)=>{
+        // if(err) {
+        //     console.log(err)
+        // }
+        //console.log("updated", updatedTracker)
+      res.redirect('/class_tracker/index');
+  })
+  })
+
+
 
 
 

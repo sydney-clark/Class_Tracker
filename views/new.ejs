@@ -15,19 +15,27 @@
             <h1 class="display-5 mb-5"><stong>New Student Registration page</stong></h1>
         </div>
         <div class="main row justify-content-center">
-            <form action="/new"  class="row justify-content-center mb-4" method="POST" autocomplete="off">
+            <!-- class="row justify-content-center mb-4" -->
+            <form action="/class_tracker/new" method="POST">
                 <div class="col-8 mb-4">
-                    <lable for="Name">Name</lable>
-                    <input class="form-control" type="text" placeholder="Enter Name">
+                    <label for="Name">Name</label>
+                    <input name="Name"class="form-control" type="text" placeholder="Enter Name">
                 </div>
                 <div class="col-8 mb-3">
-                    <lable for="Github">Github Repo</lable>
-                    <input class="form-control" type="text" placeholder="Enter Github Repo ">
+                    <label for="Github">Github Repo</label>
+                    <input name="Github"class="form-control" type="text" placeholder="Enter Github Repo ">
                 </div>
+
                 <div class="col-8 mb-3">
-                    <lable for="Fact">Interesting Fact</lable>
-                    <input class="form-control" type="text" placeholder="Enter Interesting Fact ">
+                    <label for="Fact">Interesting Fact</label>
+                    <input name="Fact" class="form-control" type="text" placeholder="Enter Interesting Fact ">
                 </div>
+
+                <!-- <div class="col-8 mb-3">
+                    <lable for="Fact">Animal Name</lable>
+                    <input class="form-control" type="text" placeholder="Enter Animal Name">
+                </div> -->
+
                 <div class="col-8 mb-3">
                     <lable for="Animal">Favorite Animal</lable>
                     <input class="form-control" id="firstName" type="file" placeholder="Enter Favorite Animal ">

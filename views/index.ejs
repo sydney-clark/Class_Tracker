@@ -51,9 +51,11 @@
                                     <a href="/class_tracker/edit/<%= trackers._id %>" class="btn border-shadow update">
                                     <span class="text-gradient"><i class="fa-solid fa-user-pen"></i></span>
                                     </a>
-                                    <a href="/class_tracker/<%=trackers._id %>" class="btn borderder-shadow update">
-                                    <span class="text-gradient"><i class="fa-solid fa-trash"></i></span>
-                                    </a>
+                                    <form action="/class_tracker/tracker/<%= trackers._id %>?_method=DELETE" method="POST">
+                                    <!-- <input type="submit" class="btn borderder-shadow update"> -->
+                                    <button type="submit" class="text-gradient"><i class="fa-solid fa-trash"></i> </button> 
+                                </form>   
+                               
                                 </td>
                             </tr>
                             <% }) %>
