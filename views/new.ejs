@@ -1,22 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-
     <%- include('./partials/head.ejs') %>
-    <title>New Page</title>
-</head>
-<body class="new-page-container">
+<body class="new-page-container" id="newPage">
     <div class="container mt-5">
         <div class="text-center">
-            <h1 class="display-5 mb-5"><stong>New Student Registration page</stong></h1>
+            <h1 class="display-5 mb-5" id="newTitle">New Student Registration page</h1>
         </div>
-        <div class="main row justify-content-center">
-            <!-- class="row justify-content-center mb-4" -->
-            <form action="/class_tracker/new" method="POST">
+        <div class="mainRow">
+            <form action="/class_tracker/new" method="POST" class="newForm">
                 <div class="col-8 mb-4">
                     <label for="Name">Name</label>
                     <input name="Name"class="form-control" type="text" placeholder="Enter Name">
@@ -25,17 +16,10 @@
                     <label for="Github">Github Repo</label>
                     <input name="Github"class="form-control" type="text" placeholder="Enter Github Repo ">
                 </div>
-
                 <div class="col-8 mb-3">
                     <label for="Fact">Interesting Fact</label>
                     <input name="Fact" class="form-control" type="text" placeholder="Enter Interesting Fact ">
                 </div>
-
-                <!-- <div class="col-8 mb-3">
-                    <lable for="Fact">Animal Name</lable>
-                    <input class="form-control" type="text" placeholder="Enter Animal Name">
-                </div> -->
-
                 <div class="col-8 mb-3">
                     <lable for="Animal">Favorite Animal</lable>
                     <input class="form-control" id="firstName" type="file" placeholder="Enter Favorite Animal ">
@@ -43,13 +27,11 @@
                 <div class="col-8">
                     <input class="btn btn-success add-btn" type="submit" value="Submit"></input>
                 </div>
-               
-             
             </form>
-            <a class="btn" href="/class_tracker/index">Go Back to Index</a>
-           
+            <div>
+            <button class="bBtn"> <a href="/class_tracker/index" class="buttonText">Back to Index</a></button>
+    </div>
         </div>
-
     </div>
 </body>
 </html>

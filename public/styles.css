@@ -145,12 +145,35 @@
 
 
 /* start new page css */
-.new-page-container {
-  background-image: linear-gradient(to left, #ebf5e5, #8f9188);
+#newPage {
+  background-image: url("https://i.imgur.com/2EK1uB0.jpg");
+  background-image: fixed 100% 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0px;
+  margin: 0px;
 }
-.new-page-container a {
-  text-decoration: none;
+
+#newTitle {
+  color: white;
+  font-size: 80px;
 }
+
+.newForm {
+  color: white;
+  text-align: center;
+}
+
+.bBtn {
+  background-image: linear-gradient(to right, #380036, #b538df, #0e6edc);
+  font-size: 25px;
+  margin-top: 70px;
+}
+
+.buttonText {
+  color: white;
+}
+
 /* end new page css */
 
 
