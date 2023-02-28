@@ -112,12 +112,10 @@ router.get('/new', (req, res) => {
 // Create //processes the data that is submitted in the form
 // =======================
 
-router.post('/class_tracker', (req, res) => {
-    res.send('testing')
+router.post('/new', (req, res) => {
     Tracker.create(req.body, (error, createdTracker) => {
-        // res.redirect('/class_tracker')
+        res.redirect('/class_tracker/index')
     })
-    // res.send(req.body);
 })
 
 
