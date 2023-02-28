@@ -9,7 +9,7 @@ router.use(methodOverride('_method'));
 //routes now go in here and say router.get instead of app.get
 
 router.delete('tracker/:id', (req, res)=> {
-    Pokemon.findByIdAndRemove(req.params.id, (err, data)=>{
+    Tracker.findByIdAndRemove(req.params.id, (err, data)=>{
       res.redirect('/tracker')
     })
   })
