@@ -108,8 +108,10 @@ router.get('/new', (req, res) => {
     res.render('new.ejs');
 });
 
+
+
 router.get('/', (req, res) => {
-	res.redirect('/class_tracker');
+	res.redirect('/class_tracker/index');
 });
 
 // =======================
