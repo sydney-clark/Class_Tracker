@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');
 
+
+/* start index page css */
+
 :root{
     --dark: black;
     --light: #adb5bd;
@@ -137,3 +140,12 @@
     background-color: var(--dark);
     border-color: rgb(5, 5, 5);
 }
+
+/* end index page css */
+
+/* start new page css */
+/* end new page css */
+/* start edit page css */
+/* end edit page css */
+/* start show page css */
+/* end show page css */
