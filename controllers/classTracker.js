@@ -109,7 +109,7 @@ router.get('/new', (req, res) => {
 });
 
 router.get('/', (req, res) => {
-	res.redirect('/index');
+	res.redirect('/class_tracker');
 });
 
 // =======================
