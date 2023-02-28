@@ -108,6 +108,10 @@ router.get('/new', (req, res) => {
     res.render('new.ejs');
 });
 
+router.get('/', (req, res) => {
+	res.redirect('/index');
+});
+
 // =======================
 // Create //processes the data that is submitted in the form
 // =======================
