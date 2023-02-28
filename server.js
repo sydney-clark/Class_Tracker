@@ -22,6 +22,10 @@ app.use("/public", express.static(__dirname + "/public"));
 
 app.use('/class_tracker', trackerController);
 
+app.get('/', (req, res) => {
+	res.redirect('/class_tracker/index');
+});
+
 // =======================
 // Listener
 // =======================

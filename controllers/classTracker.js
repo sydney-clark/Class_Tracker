@@ -110,10 +110,6 @@ router.get('/new', (req, res) => {
 
 
 
-router.get('/', (req, res) => {
-	res.redirect('/class_tracker/index');
-});
-
 // =======================
 // Create //processes the data that is submitted in the form
 // =======================
