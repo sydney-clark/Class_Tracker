@@ -17,16 +17,16 @@ router.delete('tracker/:id', (req, res)=> {
 // Seed Route
 // ========================
 
-router.get('/seed', (req, res) => {
-    // console.log(seedData)
-	Tracker.create(seedData, (err, data) => {
-        if(err) {
-            console.log(err)
-        }
-		console.log('seed data', data)
-        res.send(data);
-	});
-});
+// router.get('/seed', (req, res) => {
+//     // console.log(seedData)
+// 	Tracker.create(seedData, (err, data) => {
+//         if(err) {
+//             console.log(err)
+//         }
+// 		console.log('seed data', data)
+//         res.send(data);
+// 	});
+// });
 
 
 // =======================
@@ -108,13 +108,13 @@ router.get('/new', (req, res) => {
 // Create //processes the data that is submitted in the form
 // =======================
 
-// router.post('/class_tracker', (req, res) => {
-//     res.send('testing')
-    // trackerSchema.create(req.body, (error, createdTracker) => {
-    //     res.redirect('/class_tracker')
-    // })
-    //  res.send(req.body);
-// })
+router.post('/class_tracker', (req, res) => {
+    res.send('testing')
+    Tracker.create(req.body, (error, createdTracker) => {
+        // res.redirect('/class_tracker')
+    })
+    // res.send(req.body);
+})
 
 
 module.exports = router;

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Gloock&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Gloock&display=swap');
 
 /* start index page css */
 
@@ -140,9 +141,8 @@
   border-color: rgb(5, 5, 5);
 }
 
-
-
 /* end index page css */
+
 
 /* start new page css */
 .new-page-container {
@@ -152,6 +152,8 @@
   text-decoration: none;
 }
 /* end new page css */
+
+
 /* start edit page css */
 .link-edit {
   padding-top: 40px;
@@ -161,31 +163,57 @@
   text-decoration: none;
 }
 /* end edit page css */
+
+
 /* start show page css */
+#showPage {
+  background-image: url("https://i.imgur.com/AguWoj0.jpg");
+  background-image: fixed 100% 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0px;
+  margin: 0px;
+}
 .new-page-container img {
-  margin-top: 30px;
+  margin-top: 75px;
   width: 400px;
   height: 400px;
   border-radius: 5px;
   align-items: center;
 }
 img:hover {
-  -webkit-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  transform: scale(1.2);
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
   transition: 1s ease;
 }
 .show-list {
   border-radius: 5px;
   align-items: left;
 }
+
+#showTitle {
+    font-size: 100px;
+    font-family: 'Courgette', cursive;
+    margin-top: 80px;
+}
+
+.sName {
+    font-size: 70px;
+    color: #7b07b0;
+}
+
 .info {
+  font-size: 30px;
   font-weight: 600;
   text-align: center;
   padding-top: 10px;
 }
-.link {
-  padding-top: 40px;
-  text-align: center;
+
+.backBtn {
+    background: linear-gradient(to right, #eaf607, #e34b05);
+    font-size: 20px;
+    margin-top: 70px;
 }
+
 /* end show page css */
