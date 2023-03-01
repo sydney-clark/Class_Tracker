@@ -13,10 +13,10 @@ App that allows teachers to keep track of what students they have in class
 
 
 # Live Demo
-You can check a live demo [here] (https://class-tracker.onrender.com)
+You can check a live demo [here](https://class-tracker.onrender.com).
 
 ## _Technologies used_
-####  The following technologies were used to develop this portfolio
+####  The following technologies were used to develop this app
 ---
 - HTML
 - CSS
